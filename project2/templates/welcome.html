@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("{{ url_for('static', filename='images/bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Centering Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5); /* Darker overlay for better contrast */
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: rgb(162, 0, 0);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        /* Subheading Styles */
+        p {
+            font-size: 2em;
+            margin: 10px 0;
+            color: white;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Image Styles */
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 2s ease-out;
+        }
+
+        /* Button Style */
+        .button {
+            margin-top: 30px;
+            background-color: #9b0404;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #d9534f;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+        // Optional JavaScript for any interactivity (if needed)
+        function redirectToHome() {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Image -->
+        <img src="data:image/jpeg;base64,{{ image }}" alt="Employee Image">
+
+        <!-- Title -->
+        <h1>Welcome :- {{ name }}!</h1>
+
+        <!-- Job Title and Employee ID -->
+        <p>Job Title: {{ job_title }}</p>
+        <p>Employee ID: {{ employee_id }}</p>
+
+        <!-- Button to Return to Home -->
+        <button class="button" onclick="redirectToHome()">Go to Home</button>
+    </div>
+</body>
+</html>

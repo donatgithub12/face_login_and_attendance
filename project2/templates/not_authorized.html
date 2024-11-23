@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background: url("{{ url_for('static', filename='images/background.png') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        /* Title Styles */
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px 0;
+            color: #ff4c4c; /* Red color for the title */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Paragraph Styles */
+        p {
+            font-size: 2em;
+            margin: 10px 0 20px 0;
+            line-height: 1.8;
+            color: #fffffffe; /* Light grey color for paragraph text */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Retry Button */
+        .retry-button {
+            background-color: #ff4c4c;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .retry-button:hover {
+            transform: scale(1.1);
+            background-color: #ff6666;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        // Retry Button Functionality
+        function retryLogin() {
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+    </script>
+</head>
+<body>
+    <!-- Centered Content -->
+    <div class="content">
+        <h1>Access Denied</h1>
+        <p><b>We could not recognize your face. Please try again or contact support.</b></p>
+        <button class="retry-button" onclick="window.location.href='/'">RETRY</button>
+    </div>
+</body>
+</html>
